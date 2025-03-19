@@ -1,0 +1,51 @@
+export const CategoryData = [
+  {
+    name: "Sort By Category",
+    id: 1,
+    tittle: "",
+    date: "",
+    display: "",
+  },
+  {
+    name: "",
+    id: 2,
+    tittle: "Action",
+    date: "2023-08-15",
+    display: "show",
+  },
+  {
+    name: "",
+    id: 3,
+    tittle: "Romance",
+    date: "2023-09-22",
+    display: "show",
+  },
+  {
+    name: "",
+    id: 4,
+    tittle: "Dramma",
+    date: "2023-10-10",
+    display: "show",
+  },
+  {
+    name: "",
+    id: 5,
+    tittle: "Historical",
+    date: "2023-11-05",
+    display: "show",
+  },
+  {
+    name: "",
+    id: 6,
+    tittle: "Tech",
+    date: "2023-12-01",
+    display: "show",
+  },
+  {
+    name: "",
+    id: 7,
+    tittle: "Anime",
+    date: "2024-01-03",
+    display: "show",
+  },
+];

@@ -1,0 +1,686 @@
+//Create Category
+{
+    "name": "test",
+    "tittle": "Test"
+}
+
+Amakababe00$
+
+
+//user1
+
+
+
+//Admin login
+chibuzormekalam@gmail.com
+Amakababe00$
+    
+
+//User8 login
+auracle@gmail.com
+PromiseAuracle
+
+/dash/us/Promise%20Auracle
+
+//User1 login
+emekalamoluomachi@gmail.com
+Oluomachi00$
+
+//User2 login
+Victor22@gmail.com
+VictorAugustine
+
+
+//User3 login
+ann22@mail.com
+AnnAugustine
+
+
+//User4 login
+amakababe11@gmail.com
+Amakababe11
+
+//User5 login
+benjamin22@gmail.com
+BenjaminEmekalam
+
+
+ a ? (d(a[0].name),
+        C(a)) : d(e.jsx("p", {
+            children: "No data list "
+        }))
+
+//User6 login
+micheal22@gmail.com
+AbioyeMIchael
+
+
+
+//User7 login
+adetounGoodluck@gmail.com
+AdetounGoodluck
+
+ "base": "https://chibuzor-coder.github.io/stream/",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ html: `
+  <div style="
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: url('https://res.cloudinary.com/dtjgj2odu/image/upload/v1735808522/errorPage3_mc0z9z.jpg') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    color: #333;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+  ">
+    <h2 style="color: #fff;">Password Reset Request</h2>
+    <p style="color: #f5f5f5;">
+      Click the link below to reset your password. This link is valid for 1 hour.
+    </p>
+    <a href="${resetLink}" 
+      style="display: inline-block; padding: 10px 20px; background: #3498db; 
+      color: #fff; text-decoration: none; font-weight: bold; border-radius: 5px;">
+      Reset Password
+    </a>
+    <p style="color: #f5f5f5;">
+      If you did not request this, please ignore this email.
+    </p>
+  </div>
+`,
+
+
+
+
+
+@keyframes ringg {
+  50% {
+    transform: rotate(0deg);
+    box-shadow: 1px 5px 2px rgba(27, 30, 50, 1);
+  }
+  100% {
+    transform: rotate(0deg);
+    box-shadow: 1px 5px 2px rgba(242, 0, 0, 1);
+  }
+}
+
+
+ /* @keyframes load {
+  0% {
+    box-shadow: 0 0 5px rgba(242, 0, 0, 1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(242, 0, 0, 0.8);
+    transform: scale(1.1);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(242, 0, 0, 1);
+    transform: scale(1);
+  }
+}  */
+
+
+
+.load::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 5px rgba(242, 0, 0, 1);
+  border-radius: 50%;
+  animation: ringg 3s linear infinite;
+  display: block; /* Ensures it's visible */
+}
+const createdAt = new Date("2025-02-12T09:16:08.000Z");
+const subscriptionDurationInMonths = 1; // Change this as per your plan
+const expiryDate = new Date(createdAt);
+expiryDate.setMonth(expiryDate.getMonth() + subscriptionDurationInMonths);
+
+console.log("Subscription expires on:", expiryDate.toISOString());
+
+
+
+                     <>
+              <div className="flex justify-center">
+                <img
+                  src="https://res.cloudinary.com/dtjgj2odu/image/upload/v1739154208/logo_c6zxpk.png"
+                  alt="Success"
+                  className="w-20 h-20"
+                />
+              </div>
+              <h2 className="text-2xl font-bold text-green-600 mt-4">
+                Payment Successful!
+              </h2>
+              <p className="text-gray-600 mt-2">
+                Thank you for your subscription.
+              </p>
+              <a
+                href="/"
+                className="mt-4 inline-block bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition"
+              >
+                Back to Home
+              </a>
+            </>
+
+            
+          : (
+            <>
+              <h2 className="text-2xl font-bold text-red-600">
+                Payment Failed!
+              </h2>
+              <p className="text-gray-600 mt-2">
+                There was an issue with your payment.
+              </p>
+              <a
+                href="/"
+                className="mt-4 inline-block bg-red-500 text-white px-6 py-2 rounded-lg shadow hover:bg-red-600 transition"
+              >
+                Try Again
+              </a>
+            </>
+          )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          import { BsCollection, BsCollectionFill } from "react-icons/bs";
+import { Movies } from "../../Data/MovieData";
+import { Link } from "react-router-dom";
+import { FaHeart } from "react-icons/fa";
+import { useContext, useMemo, useState } from "react";
+import MovieContext from "../../Context/MovieContext";
+
+const PopularMovies = () => {
+  const { AddToCart, FetchedMovies } = useContext(MovieContext);
+
+  const selected = (FetchedMovies || []).filter(
+    (movie) => movie.popular === true
+  );
+
+  const HandelLoadQuantity = (val) => {
+    if (val === "next") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (val === "prev") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      console.log("error");
+    }
+  };
+
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 10;
+  const totalPages =
+    FetchedMovies && Math.ceil(FetchedMovies.length / itemsPerPage);
+
+  // Paginated movies for the current page
+  const paginatedMovies = useMemo(() => {
+    return (FetchedMovies || []).slice(
+      (page - 1) * itemsPerPage,
+      page * itemsPerPage
+    );
+  }, [FetchedMovies, page]);
+
+  // console.log("selected", selected);
+
+  return (
+    <div>
+      <div className="flex w-full sm:gap-5 gap-4 items-center my-14">
+        <BsCollectionFill className="sm-h-6  sm-w-6 h-4 w-4  text-subMain" />
+        <h2 className="sm-text-xl text-lg font-bold">Popular Movies</h2>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  xl:grid-cols-4  w-full gap-8">
+        {paginatedMovies.map((movie) => (
+          <div
+            className="border-2 relative border-border rounded bg-center bg-cover transi hover:scale-95 w-full flex flex-col "
+            key={`${movie.id}`}
+          >
+            <Link
+              to={`/movie/${movie.id}`}
+              className=" h-64  bg-center bg-cover "
+            >
+              <img
+                src={`${movie.image}`}
+                loading="lazy"
+                className="w-full h-full object-cover"
+                alt=""
+              />
+            </Link>
+
+            <div className="flex absolute bottom-0  justify-between items-center  bg-trans2 w-full text-white px-4 py-3">
+              <h3 className="font-semibold truncate">{movie.name}</h3>
+              <button
+                onClick={() => {
+                  console.log("cartt", movie.id);
+                  AddToCart(movie, movie.id);
+                }}
+                className="h-8 w-8 text-sm flexCol transi hover:bg-transparent border-subMain bg-subMain2 border-2 rounded-md text-white "
+              >
+                <FaHeart />
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex justify-center gap-2 my-10">
+        <button
+          disabled={page === 1}
+          onClick={() => {
+            setPage((prev) => prev - 1);
+            HandelLoadQuantity("prev");
+          }}
+          className={`px-4 py-2 rounded ${
+            page === 1 ? "bg-gray-400 text-white" : "bg-subMain text-white"
+          }`}
+        >
+          Previous
+        </button>
+        <button
+          disabled={page === totalPages}
+          onClick={() => {
+            setPage((prev) => prev + 1);
+            HandelLoadQuantity("next");
+          }}
+          className={`px-4 py-2 rounded ${
+            page === totalPages
+              ? "bg-gray-400 text-white"
+              : "bg-subMain text-white"
+          }`}
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default PopularMovies;
+
+
+
+
+
+
+
+
+https://stream-ashy-theta.vercel.app/thankyou%22?status=successful&tx_ref=c46833d4-74b5-44da-a027-24195283c095&transaction_id=8398233
+
+
+{
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
+    ]
+    
+}
+
+
+
+
+import { Children, lazy, StrictMode, Suspense, useState } from "react";
+import { createRoot } from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import App from "./App.jsx";
+import Dashboard from "./pages/DashBoard/Dashboard";
+
+import Romance from "./pages/FilteredMovies/Romance.jsx";
+import Dramma from "./pages/FilteredMovies/Dramm.jsx";
+import Tech from "./pages/FilteredMovies/Tech.jsx";
+import Action from "./pages/FilteredMovies/Action.jsx";
+// import FilteredDrammaMovies from "./pages/FilteredDrammaMovies.jsx";
+// import FilteredActionMovies from "./pages/FilteredActionMovies.jsx";
+// import FilteredMovies from "./pages/FilteredMovies.jsx";
+// import ResetPassword from "./pages/ResetPassword.jsx";
+// import AccountRecovery from "./pages/AccountRecovery.jsx";
+
+// import Recovery from "./pages/Recovery.jsx";
+
+// import FavouritePage from "./pages/FavouritePage.jsx";
+
+// import Dashboard from "./pages/DashBoard/Dashboard.jsx";
+
+// import DashboardPage from "./pages/DashBoard/Components/Dashboard/DashboardPage.jsx";
+// import DashboardPage from "./pages/DashBoard/DashboardPage";
+// import Watch from "./pages/Watch.jsx";
+// import Login from "./pages/Login.jsx";
+// import Register from "./pages/Register.jsx";
+// import DashboardPage from "./pages/DashBoard/DashboardPage.jsx";
+// import SingleMovie from "./pages/SingleMovie.jsx";
+// import Home from "./pages/Home.jsx";
+// import Contact from "./pages/Contact.jsx";
+// import NotFound from "./pages/NotFound.jsx";
+// import About from "./pages/About.jsx";
+// import User from "./pages/DashBoard/ADMIN/Users.jsx";
+// import Favourite from "./pages/DashBoard/FavouriteMovies.jsx";
+// import MoviesPage from "./pages/MoviesPage.jsx";
+
+// const Home = lazy(
+//   () =>
+//     new Promise((resolve) =>
+//       setTimeout(() => resolve(import("./pages/Home")), 7000)
+//     )
+// );
+
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const MoviesPage = lazy(() => import("./pages/MoviesPage"));
+const User = lazy(() => import("./pages/DashBoard/ADMIN/Users"));
+const AccountRecovery = lazy(() => import("./pages/AccountRecovery.jsx"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const SingleMovie = lazy(() => import("./pages/SingleMovie"));
+const Watch = lazy(() => import("./pages/Watch"));
+const Login = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import("./pages/Register"));
+const FavouritePage = lazy(() => import("./pages/FavouritePage.jsx"));
+const ResetPassword = lazy(() => import("./pages/ResetPassword.jsx"));
+const Thankyou = lazy(() => import("./pages/Thankyou.jsx"));
+
+// function generateRandomString(length) {
+//   const chars =
+//     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+//   let result = "";
+//   for (let i = 0; i < length; i++) {
+//     result += chars.charAt(Math.floor(Math.random() * chars.length));
+//   }
+//   return result;
+// }
+
+// console.log(generateRandomString(10)); // Example output: "A1bC2dE3Fg"
+// const result = generateRandomString(8);
+
+const actionn = "Action";
+const romance = "Romance";
+const dramma = "Dramma";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <Home />, // Default route
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+      },
+      {
+        path: "movies",
+        element: <MoviesPage />,
+      },
+      {
+        path: "/user",
+        element: <User />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+
+      {
+        path: "movie/:id",
+        element: <SingleMovie />,
+      },
+      {
+        path: "watch/:name",
+        element: <Watch />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "favouritpage/:name",
+        element: <FavouritePage />,
+      },
+      {
+        path: "register",
+        element: <Register />,
+      },
+      {
+        path: `/dash/us/:name`,
+        element: <Dashboard />,
+      },
+      {
+        path: "/dash/ad/:name",
+        element: <Dashboard />,
+      },
+      {
+        path: "recovery",
+        element: <AccountRecovery />,
+      },
+      {
+        path: "resetPassword/:token",
+        element: <ResetPassword />,
+      },
+
+      {
+        path: "action",
+        element: <Action />,
+      },
+
+      {
+        path: "romance",
+        element: <Romance />,
+      },
+      {
+        path: "dramma",
+        element: <Dramma />,
+      },
+      {
+        path: "tech",
+        element: <Tech />,
+      },
+
+      {
+        path: "thankyou",
+        element: <Thankyou />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ],
+  },
+]);
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <Suspense
+      fallback={
+        <div className="w-full h-[100vh] bg-main flex justify-center items-center">
+          <div className="w-[150px] h-[150px] rounded-full  border border-border animate-bounce">
+            <img
+              className="h-full w-full rounded-full"
+              src="https://res.cloudinary.com/dtjgj2odu/image/upload/v1739151976/logoround_awixqx.png"
+              alt=""
+            />
+          </div>
+        </div>
+      }
+    >
+      <RouterProvider router={router} />
+    </Suspense>
+  </StrictMode>
+);
+
+
+
+
+exports.createUser = async (req, res) => {
+  const { email, phone, name, password, confirmpassword } = req.body;
+  if (!email || !phone || !name || !password || !confirmpassword) {
+    return res
+      .status(400)
+      .json({ success: false, message: "All fields are required." });
+  }
+  try {
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Invalid email format." });
+    }
+
+    // Check if user exists
+    const existingUser = await prisma.user.findUnique({ where: { email } });
+    if (existingUser) {
+      return res
+        .status(400)
+        .json({ success: false, message: "User already exists." });
+    }
+
+    // Validate passwords
+    if (password.length < 8) {
+      return res.status(400).json({
+        success: false,
+        message: "Password must be at least 8 characters.",
+      });
+    }
+    if (password !== confirmpassword) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Passwords do not match." });
+    }
+
+    // Validate file upload
+    if (!req.file) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Image file is required." });
+    }
+
+    // Upload image to Cloudinary
+    const imageUrl = await uploadToCloudinary(req.file.buffer, "image");
+    if (!imageUrl) {
+      return res
+        .status(500)
+        .json({ success: false, message: "Failed to upload image." });
+    }
+
+    // Hash password
+    const salt = await bcrypt.genSalt(11);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // Create user in database
+    const newUser = await prisma.user.create({
+      data: {
+        email,
+        name,
+        password: hashedPassword,
+        image: imageUrl,
+        phone,
+      },
+    });
+    if (!newUser) {
+      return res
+        .status(400)
+        .json({ success: false, message: "User registration failed." });
+    }
+    // Respond with success
+    return res.status(201).json({
+      success: true,
+      message: "User registered successfully.",
+      user: {
+        id: newUser.id,
+        email: newUser.email,
+        name: newUser.name,
+        image: newUser.image,
+      },
+    });
+  } catch (error) {
+    console.error("Error creating user:", error.message);
+    res.status(500).json({ success: false, message: "Server error." });
+  }
+};
+
+
+
+
+
+
+
+
+
+
+Flutterwave response: {
+  "status": "success",
+  "message": "Transaction fetched successfully",
+  "data": {
+    "id": 8401934,
+    "tx_ref": "649e5c7d-a73a-491f-a5b1-5191f6642101",
+    "flw_ref": "FLW-MOCK-540be3601c7c22c6972458f78d39b27b",
+    "device_fingerprint": "fca6bfd7166897a9df797353f24b15bf",
+    "amount": 300,
+    "currency": "USD",
+    "charged_amount": 300,
+    "app_fee": 11.4,
+    "merchant_fee": 0,
+    "processor_response": "Approved. Successful",
+    "auth_model": "VBVSECURECODE",
+    "ip": "54.75.161.64",
+    "narration": "CARD Transaction ",
+    "status": "successful",
+    "payment_type": "card",
+    "created_at": "2025-02-21T08:33:40.000Z",
+    "account_id": 2587138,
+    "card": {
+      "first_6digits": "424242",
+      "last_4digits": "4242",
+      "issuer": " CREDIT",
+      "country": "VISA TEST CARD",
+      "type": "VISA",
+      "token": "flw-t1nf-200eee1fa29f2d4f03f6bd071db63a37-m03k",
+      "expiry": "09/20"
+    },
+    "meta": {
+      "__CheckoutInitAddress": "https://checkout-v2.dev-flutterwave.com/v3/hosted/pay"
+    },
+    "amount_settled": 287.74,
+    "customer": {
+      "id": 2591963,
+      "name": "Chibuzor Emekalam",
+      "phone_number": "09074639302",
+      "email": "chibuzoremkalam@gmail.com",
+      "created_at": "2025-02-21T08:33:40.000Z"
+    }
+  }
+}
+Payment email sent successfully
+{
