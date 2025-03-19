@@ -58,7 +58,7 @@ const Home = () => {
           ></div>
         </div>
 
-        <div className='bg-faintWhite w-full flex justify-center gap-10 py-24'>
+        <div className='bg-faintWhite w-full lg:flex justify-center gap-10 py-24 grid grid-cols-2 md:grid-cols-3'>
           {Linkss.map((link, i) => (
             <Link key={i} className='flex justify-center items-center text-main font-semibold'>
               <p>{link.icon}</p>
