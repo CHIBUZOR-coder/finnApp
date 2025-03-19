@@ -4,7 +4,7 @@ import Layout from '../Layout/Layout'
 import { Link } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import MovieContext from '../Context/FinContext'
-import Uploader from './DashBoard/Components/UpdateProfile/Uploader'
+
 import { RiLoader2Fill } from 'react-icons/ri'
 import { useNavigate } from 'react-router-dom'
 
