@@ -9,6 +9,7 @@ import { TiContacts } from 'react-icons/ti'
 import { TbTableDashed } from 'react-icons/tb'
 import { use } from 'react'
 import { MdArrowDropDown } from 'react-icons/md'
+import { GoArrowUpRight } from 'react-icons/go'
 
 const Navbar = ({ Text }) => {
   const { FavouriteCount, logDetail } = useContext(MovieContext)
@@ -142,7 +143,7 @@ const Navbar = ({ Text }) => {
               >
                 Features
               </NavLink>
-              
+
               <NavLink
                 className={({ isActive }) =>
                   `${
@@ -155,7 +156,7 @@ const Navbar = ({ Text }) => {
                 to={`${dash}`}
               >
                 Pages
-                <MdArrowDropDown />
+                <MdArrowDropDown className='h-6 w-6'/>
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
@@ -168,7 +169,7 @@ const Navbar = ({ Text }) => {
                 }
                 to={`${fav || NotUser}`}
               >
-               Cart(2)
+                Cart(2)
               </NavLink>
             </div>
 
@@ -184,7 +185,8 @@ const Navbar = ({ Text }) => {
                 }
                 to={`${dash}`}
               >
-               Login
+                <p>Login</p>
+                <GoArrowUpRight />
               </NavLink>
 
               <Link
