@@ -93,8 +93,11 @@ const Navbar = ({ Text }) => {
           {/*Menu*/}
           <div className='w-full font-medium text-sm hidden   lg:flex justify-between  items-center'>
             <div className='flex items-center gap-5'>
-              <div className='col-span-1 lg:block hidden '>
-                <div className='flex justify-center items-center'>
+              <div className='col-span-1 lg:block hidden cursor-pointer '>
+                <div
+                  className='flex justify-center items-center gap-1
+'
+                >
                   <p className='font-semibold text-white text-lg navbarText'>
                     Fin <span className='text-xl'>X</span>{' '}
                   </p>
@@ -206,8 +209,8 @@ const Navbar = ({ Text }) => {
 
           <div className='w-full flex flex-col lg:hidden'>
             <div className='flex justify-between item center w-full '>
-              <div className='col-span-1  '>
-                <div className='flex justify-center items-center'>
+              <div className=' '>
+                <div className='flex justify-center items-center transi cursor-pointer gap-1'>
                   <p className='font-semibold text-white text-lg navbarText'>
                     Fin <span className='text-xl'>X</span>{' '}
                   </p>
@@ -232,14 +235,16 @@ const Navbar = ({ Text }) => {
           </div>
 
           <div
-            className={`absolute w-full top-0 left-0 bg-faintWhite h-28 ${
+            className={`absolute w-full top-0 left-0 bg-faintWhite ${
               Show ? 'show' : 'menu'
             }
 `}
           >
             <div className='flex justify-between items-center p-3 w-full'>
-              
-              <div className='flex justify-center items-center bg-mainTrans rounded-full p-2'>
+              <div
+                className='flex justify-center items-center bg-mainTrans hover:bg-main transi gap-1
+ cursor-pointer rounded-full p-2'
+              >
                 <p className='font-semibold text-white text-lg navbarText'>
                   Fin <span className='text-xl'>X</span>{' '}
                 </p>
@@ -259,6 +264,106 @@ const Navbar = ({ Text }) => {
                     HandleMenuToggle(e)
                   }}
                 />
+              </div>
+            </div>
+            <div className='w-full'>
+              <hr className='w-full bg-main' />
+            </div>
+            {/* ****************************************/};
+            <div className='w-full flex justify-between p-3'>
+              <div className='flex flex-col   items-start gap-3 lg:hidden  '>
+                <NavLink
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                  }}
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? 'text-white bg-mainTrans'
+                        : 'hover:text-white hover:bg-mainTrans transi text-main relative'
+                    } hov p-2 flex justify-center gap-2 items-center rounded-md navbarText
+`
+                  }
+                  to={`/movies`}
+                >
+                  Home
+                </NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? 'text-white bg-mainTrans'
+                        : 'hover:text-white hover:bg-mainTrans transi text-main relative'
+                    } hov p-2 flex justify-center gap-2 items-center rounded-md navbarText
+`
+                  }
+                  to={`/about`}
+                >
+                  About
+                </NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? 'text-white bg-mainTrans'
+                        : 'hover:text-white hover:bg-mainTrans transi text-main relative'
+                    } hov p-2 flex justify-center gap-2 items-center rounded-md navbarText
+`
+                  }
+                  to={`/contact`}
+                >
+                  Features
+                </NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? 'text-white bg-mainTrans'
+                        : 'hover:text-white hover:bg-mainTrans transi text-main relative  navbarText'
+                    } hov  p-2 flex justify-center items-center rounded-md navbarText
+`
+                  }
+                  to={`${dash}`}
+                >
+                  Pages
+                  <MdArrowDropDown className='h-6 w-6' />
+                </NavLink>
+
+                <NavLink
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? 'text-white bg-mainTrans'
+                        : 'hover:text-white hover:bg-mainTrans transi text-main relative  navbarText'
+                    } hov  p-2 flex justify-center items-center rounded-md navbarText
+`
+                  }
+                  to={`${dash}`}
+                >
+                  <p>Login</p>
+                  <GoArrowUpRight />
+                </NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    `${
+                      isActive
+                        ? 'text-white bg-mainTrans'
+                        : 'hover:text-white hover:bg-mainTrans transi text-main  relative'
+                    } hov   p-3 flex justify-center items-center rounded-md navbarText
+`
+                  }
+                  to={`${fav || NotUser}`}
+                >
+                  Cart(2)
+                </NavLink>
+              </div>
+              <div className='flex flex-col items-center gap-5'>
+                <Link
+                  className='p-2 text-white navbarText bg-blueBtn rounded-md transi hover:bg-blueBtnH'
+                  to={'/'}
+                >
+                  Get Started
+                </Link>
               </div>
             </div>
           </div>

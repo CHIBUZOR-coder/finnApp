@@ -32,7 +32,8 @@ export default {
         main: "rgb(8,8,8, 1)",
         mainTrans: "rgb(8,8,8, 0.7)",
         blacktrans: "rgba(0, 0, 0, 0.2)",
-        blueBtn: "rgb(11,109,255)",
+        blueBtn: "rgb(11,109,255, .7)",
+        blueBtnH: "rgb(11,109,255, 1)",
         faintWhite: "rgb(246,246,246)",
 
         subMain: "rgba(242, 0, 0, 1)",

@@ -188,7 +188,7 @@ const Layout = ({ children }) => {
 
         <Footer />
         {/* Mobile Footer */}
-        <MobileFooter setMenuOpen={setMenuOpen} />
+      
       </div>
     </>
   )
