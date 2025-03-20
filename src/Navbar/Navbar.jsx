@@ -8,13 +8,15 @@ import { FaInfoCircle } from 'react-icons/fa'
 import { TiContacts } from 'react-icons/ti'
 import { TbTableDashed } from 'react-icons/tb'
 import { use } from 'react'
-import { MdArrowDropDown } from 'react-icons/md'
+import { MdArrowDropDown, MdOutlineCancel } from 'react-icons/md'
 import { GoArrowUpRight } from 'react-icons/go'
+import { LuSquareMenu } from 'react-icons/lu'
+import { GiCancel } from 'react-icons/gi'
 
 const Navbar = ({ Text }) => {
   const { FavouriteCount, logDetail } = useContext(MovieContext)
   // console.log("favaCount",FavouriteCount);
-  const [access, setAccess] = useState(false)
+  const [Show, setShow] = useState(false)
   const userData = JSON.parse(localStorage.getItem('UserInfo')) || null
   // console.log(userData.userInfo);
   //
@@ -42,12 +44,16 @@ const Navbar = ({ Text }) => {
     fav = `/favouritpage/${userData.userInfo.name}`
   }
 
+  const HandleMenuToggle = e => {
+    e.preventDefault()
+    setShow(prev => !prev)
+  }
   // console.log("dash:", dash);
 
   const hover = 'hover:text-subMain transi text-white relative'
   const Hover = ({ isActive }) => (isActive ? 'text-subMain' : hover)
   return (
-    <>
+    <div className='w-full relative'>
       {/* Logo */}
       <div className='bg-main px-5 md:px-7 shadow-md sticky   top-0 z-40'>
         <div className='container   py-5  flex justify-start gap-5 items-center'>
@@ -156,7 +162,7 @@ const Navbar = ({ Text }) => {
                 to={`${dash}`}
               >
                 Pages
-                <MdArrowDropDown className='h-6 w-6'/>
+                <MdArrowDropDown className='h-6 w-6' />
               </NavLink>
               <NavLink
                 className={({ isActive }) =>
@@ -197,10 +203,58 @@ const Navbar = ({ Text }) => {
               </Link>
             </div>
           </div>
+
+          <div className='w-full flex flex-col lg:hidden'>
+            <div className='flex justify-between item center w-full '>
+              <div className='col-span-1  '>
+                <div className='flex justify-center items-center'>
+                  <p className='font-semibold text-white text-lg navbarText'>
+                    Fin <span className='text-xl'>X</span>{' '}
+                  </p>
+                  <Link to={`/`}>
+                    <img
+                      className='h-6 w-6 rounded-full'
+                      src='https://res.cloudinary.com/dtjgj2odu/image/upload/v1739151976/logoround_awixqx.png'
+                      alt=''
+                    />
+                  </Link>
+                </div>
+              </div>
+              <div>
+                <LuSquareMenu
+                  onClick={e => {
+                    HandleMenuToggle(e)
+                  }}
+                  className='w-6 h-6'
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            className={`absolute w-full top-0 left-0 bg-faintWhite h-28 ${
+              Show ? 'show' : 'menu'
+            }
+`}
+          >
+            <div className='flex justify-between items-center p-3'>
+              <p className='text-black'>logege</p>
+              <div className='rounded-full hover:bg-main transi'>
+                {/* <MdOutlineCancel /> */}
+                <GiCancel
+                className='text-main h-10 w-10 hover:text-faintWhite transi'
+                  onClick={(e) => {
+                    HandleMenuToggle(e)
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+
           {/*Menu Done*/}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

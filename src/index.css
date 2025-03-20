@@ -110,6 +110,35 @@ select:focus {
   animation: slideIn 0.4s ease-in-out forwards;
 }
 
+/* .menu {
+  position: absolute; 
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+}
+
+.show {
+  animation: slideInL 0.4s ease-in-out forwards;
+} */
+
+
+.menu {
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.show {
+  transform: translateY(0);
+  opacity: 1;
+   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  pointer-events: auto;
+}
+
+
+
 
 
 
