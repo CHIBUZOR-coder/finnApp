@@ -30,6 +30,7 @@ export default {
       },
       colors: {
         main: "rgb(8,8,8, 1)",
+        mainTrans: "rgb(8,8,8, 0.7)",
         blacktrans: "rgba(0, 0, 0, 0.2)",
         blueBtn: "rgb(11,109,255)",
         faintWhite: "rgb(246,246,246)",

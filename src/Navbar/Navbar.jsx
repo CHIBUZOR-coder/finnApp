@@ -237,13 +237,25 @@ const Navbar = ({ Text }) => {
             }
 `}
           >
-            <div className='flex justify-between items-center p-3'>
-              <p className='text-black'>logege</p>
+            <div className='flex justify-between items-center p-3 w-full'>
+              
+              <div className='flex justify-center items-center bg-mainTrans rounded-full p-2'>
+                <p className='font-semibold text-white text-lg navbarText'>
+                  Fin <span className='text-xl'>X</span>{' '}
+                </p>
+                <Link to={`/`}>
+                  <img
+                    className='h-6 w-6 rounded-full'
+                    src='https://res.cloudinary.com/dtjgj2odu/image/upload/v1739151976/logoround_awixqx.png'
+                    alt=''
+                  />
+                </Link>
+              </div>
               <div className='rounded-full hover:bg-main transi'>
                 {/* <MdOutlineCancel /> */}
                 <GiCancel
-                className='text-main h-10 w-10 hover:text-faintWhite transi'
-                  onClick={(e) => {
+                  className='text-main h-10 w-10 hover:text-faintWhite transi'
+                  onClick={e => {
                     HandleMenuToggle(e)
                   }}
                 />
